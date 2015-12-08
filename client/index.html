@@ -8,17 +8,60 @@
 <body ng-app="socialize">
 
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">Socialize</a>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Socialize</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#about">About</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#services">Services</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+                <li class="dropdown pull-right">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+
+                    <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                        <login-buttons></login-buttons>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <header>
+            <div class="header-content">
+                <div class="header-content-inner">
+                    <h1>Your Favorite Source of Free Bootstrap Themes</h1>
+                    <hr>
+                    <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just
+                        download your template and start going, no strings attached!</p>
+                    <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                </div>
+            </div>
+        </header>
+
+        <!--<div class="navbar-right-container">-->
+            <!--<login-buttons></login-buttons>-->
+        <!--</div>-->
     </div>
-    <div class="navbar-right-container">
-      <login-buttons></login-buttons>
-    </div>
-  </div>
 </nav>
 <div class="h100">
-  <div ui-view class="ma-main-container container-fluid h100"></div>
+    <div ui-view class="ma-main-container container-fluid h100"></div>
 </div>
 
 </body>
