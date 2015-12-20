@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="col-md-4">
+        <ul>
+            <li ng-repeat="room in rooms">
+                {{room.name}}
+                <p>{{room.description}}</p>
+                <p>Is Public: {{room.isPublic}}</p>
+                <span>Owner: {{getUserById(room.owner)}}</span><br>
+                <span ng-click="deleteRoom(room)"><a>Delete</a></span>
+            </li>
+        </ul>
+
+        <legend>
+            Add Room:
+        </legend>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label>Room Name</label>
+                <input ng-model="room.name" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Room Description</label>
+                <input ng-model="room.description" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Is public</label>
+                <input type="checkbox" ng-model="room.isPublic">
+            </div>
+            <button ng-click="addRoom()">Add</button>
+        </form>
+    </div>
+
+    <div class="col-md-5 message-list">
+        <ul>
+            <li ng-repeat="message in messages">
+                <span><b>{{getUserById(message.owner)}}:</b> </span>
+                <span>{{message.text}}</span>
+                <span>{{message.createdAt}}</span>
+                <span ng-click="deleteMessage(message)"><a>Delete</a></span>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="col-md-3" ng-controller="ContactsController">
+        This will contain something else.
+    </div>
+    <div class="push"></div>
+</div>
+
+<div class="col-md-offset-4 col-md-5 navbar-fixed-bottom">
+    <form class="form-group">
+        <input type="text" ng-model="message.text" class="form-control" placeholder="Add a message"/>
+        <button ng-click="sendMessage()">Send</button>
+    </form>
+</div>
